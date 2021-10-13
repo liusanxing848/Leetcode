@@ -1,0 +1,40 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+//左面最长连接到右面最长就是diameter
+public class Solution 
+{
+    public int answer;
+    public int DiameterOfBinaryTree(TreeNode root) 
+    {
+        answer = 0;
+        DFS(root);
+        return answer;        
+    }
+    
+    public int DFS (TreeNode root)//新建DFS
+    {
+        if (root == null)
+        {
+            return 0;
+        }
+        
+            int L = DFS(root.left);
+            int R = DFS(root.right);
+            
+            answer = Math.Max(L + R, answer); //每一次都要站在parent上来判断一下diameter
+        
+        return Math.Max(L,R) + 1;
+    }
+}
