@@ -15,20 +15,22 @@
  */
 class Solution {
     //new method
-    public boolean checkValidation(TreeNode node, int min, int max) {
-        //边界条件
+    public boolean checkValidation(TreeNode node, Integer min, Integer max) {
         if (node == null) {
             return true;
         }
-        if (node.val >= max || node.val <= min) {
+        
+        if ((max != null && node.val >= max) || (min != null && node.val <= min)) {
             return false;
         }
+        
         boolean isLeftValid = checkValidation(node.left, min, node.val);
         boolean isRightValid = checkValidation(node.right, node.val, max);
         
         return isLeftValid && isRightValid;
     }
+    
     public boolean isValidBST(TreeNode root) {
-        return checkValidation(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return checkValidation(root, null, null);
     }
 }
