@@ -22,24 +22,24 @@ public class Solution
             return;
         }
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        stack.push(root);
+        stack.Push(root);
         
-        while(!stack.isEmpty())
+        while(stack.Any())
         {
-            TreeNode curr = stack.pop();
+            TreeNode curr = stack.Pop();
             if(curr.right != null)
             {
-                stack.push(curr.right)
+                stack.Push(curr.right);
             }
             
             if(curr.left != null)
             {
-                stack.push(curr.left);
+                stack.Push(curr.left);
             }
             
-            if(!stack .isEmpty())
+            if(stack.Any())
             {
-                curr.right = stack.peek(); //为了避免从stack里面拿出来找不到，用peek手段先把最上面的元素贴到root上
+                curr.right = stack.Peek(); //为了避免从stack里面拿出来找不到，用peek手段先把最上面的元素贴到root上
             }
             
             curr.left = null; //删除左分支
