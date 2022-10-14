@@ -1,4 +1,8 @@
 Linked List:
+双向链表中间节点删除，并且粘连前后断开的链。 套路：
+node.pre.next = node.next;
+node.next.pre = node.pre;
+
 要看第二遍！！->117
 
     反转链表-> 92, 206 背套路
@@ -6,3 +10,7 @@ Linked List:
     链表和二叉树互相转化 -> 109, 114
     巧妙而又深层次利用stack ->114(用到了 Stack.Any() 来判定Stack是否为空)
     纯粹刷智商-> 116
+
+
+array with string:
+3. 用双指针和dictionary来做。
