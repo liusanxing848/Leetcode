@@ -14,3 +14,6 @@ node.next.pre = node.pre;
 
 array with string:
 3. 用双指针和dictionary来做。
+
+sliding window:
+1876: why Length - 2?
