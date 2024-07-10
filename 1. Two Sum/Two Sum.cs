@@ -32,4 +32,24 @@
             return arr; //最终输出答案
         }
     }
-    //—————————————————————————————————————————————————————————————————————————————————————————————
+    
+
+    //2  using Dictionary
+public class Solution 
+{
+    public int[] TwoSum(int[] nums, int target) 
+    {
+        Dictionary<int, int> map = new Dictionary<int, int>();
+
+        for (int i = 0; i < nums.Length; i++) 
+        {
+            int val = target - nums[i];
+            if (map.ContainsKey(val)) 
+            {
+                return new int[] { map[val], i };
+            }
+            map[nums[i]] = i;
+        }
+        return new int[] {};
+    }
+}

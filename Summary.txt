@@ -1,3 +1,8 @@
+C#:
+HashSet<T> set = new HashSet<T>(array);可以直接把数组扔到hashset里。
+HashSet.Contains(T);
+
+
 Linked List:
 双向链表中间节点删除，并且粘连前后断开的链。 套路：
 node.pre.next = node.next;
@@ -17,3 +22,14 @@ array with string:
 
 sliding window:
 1876: why Length - 2?
+
+String: 
+271. used a lot of string. knowledges
+
+
+review: 14
+
+Stringbuilder:
+s.Reverse().SequenceEqual(s) (#234)
+
+

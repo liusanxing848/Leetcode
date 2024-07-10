@@ -19,3 +19,14 @@ public class Solution
         
     }
 }
+
+//solution 2
+public class Solution 
+{
+    public bool IsAnagram(string s, string t) 
+    {
+        string newS = new string(s.ToCharArray().OrderBy(c => c).ToArray());
+        string newT = new string(t.ToCharArray().OrderBy(c => c).ToArray());
+        return newS == newT;
+    }
+}
