@@ -1,24 +1,29 @@
 public class Solution {
-    public bool IsValidSudoku(char[][] board) {
+    public bool IsValidSudoku(char[][] board) 
+    {
         // Dictionaries to store the characters in each column, row, and 3x3 square
         Dictionary<int, HashSet<char>> cols = new Dictionary<int, HashSet<char>>();
         Dictionary<int, HashSet<char>> rows = new Dictionary<int, HashSet<char>>();
         Dictionary<int, HashSet<char>> squares = new Dictionary<int, HashSet<char>>();  // key = (r / 3) * 3 + c / 3
 
         // Iterate over each cell in the 9x9 Sudoku board
-        for (int r = 0; r < 9; r++) {
-            for (int c = 0; c < 9; c++) {
+        for (int r = 0; r < 9; r++) 
+        {
+            for (int c = 0; c < 9; c++) 
+            {
                 char cell = board[r][c];
                 
                 // Skip empty cells
-                if (cell == '.') {
+                if (cell == '.') 
+                {
                     continue;
                 }
 
                 // Check if the current cell value is already present in the corresponding row, column, or 3x3 square
                 if (rows.TryGetValue(r, out var rowSet) && rowSet.Contains(cell)
                         || cols.TryGetValue(c, out var colSet) && colSet.Contains(cell)
-                        || squares.TryGetValue((r / 3) * 3 + c / 3, out var squareSet) && squareSet.Contains(cell)) {
+                        || squares.TryGetValue((r / 3) * 3 + c / 3, out var squareSet) && squareSet.Contains(cell)) 
+                {
                     // If the value is already present, the board is invalid
                     return false;
                 }
